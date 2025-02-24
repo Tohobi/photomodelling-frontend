@@ -1,0 +1,10 @@
+<h1>This is the home page!</h1>
+
+<ul class="projects">
+  <li *ngFor="let project of projects">
+    <!-- <a routerLink="/detail/{{projects.id}}"> -->
+    <span class="badge">{{project.id}}</span> {{project.name}}, Desc: {{project.description}}
+    <!-- </a> -->
+    <button type="button" class="delete" title="delete picture" (click)="delete(project)">x</button>
+  </li>
+</ul>

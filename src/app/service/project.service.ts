@@ -25,7 +25,7 @@ export class ProjectService {
 
 
   getProjects(): Observable<Project[]> {
-    return this.http.get<Project[]>(this.projectUrl + '/findAll')
+    return this.http.get<Project[]>(this.projectUrl)
       .pipe(
         tap(_ => this.log('fetched projects')),
         catchError(this.handleError<Project[]>('getProjects', []))
@@ -34,7 +34,7 @@ export class ProjectService {
 
 
   getProject(id: number): Observable<Project> {
-    const url = `${this.projectUrl}/find/${id}`;
+    const url = `${this.projectUrl}/byId/${id}`;
     return this.http.get<Project>(url).pipe(
       tap(_ => this.log(`fetched project id=${id}`)),
       catchError(this.handleError<Project>(`getProject id=${id}`))

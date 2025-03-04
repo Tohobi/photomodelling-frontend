@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import { ProjectComponent } from './project/project.component';
+import { NavbarComponent } from './navbar/navbar.component';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from '../../.bac/home/home.component';
 
 export const routes: Routes = [
   { path: 'home-component', component: HomeComponent },
-  { path: 'project-component', component: ProjectComponent }
+  { path: 'navbar-component', component: NavbarComponent }
 ];

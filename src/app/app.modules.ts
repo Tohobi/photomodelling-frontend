@@ -1,25 +1,30 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { ProjectComponent } from './project/project.component';
+import { ProjectComponent } from '../../.bac/project/project.component';
 import { CommonModule } from '@angular/common';
-import { ProjectService } from './service/project.service';
+import { ProjectService } from '../../.bac/service/project.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { NavbarComponent } from './navbar/navbar.component';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [
-    // AppComponent,
-    // ProjectComponent
+    AppComponent,
+    NavbarComponent
 
   ],
-  imports: [CommonModule],
+  imports: [
+    //CommonModule,
+    BrowserModule
+  ],
   providers: [
-    ProjectService,
     // {
     //     provide: HTTP_INTERCEPTORS,
     //     useClass: JsonDateInterceptor,
     //     multi: true
     //   }
   ],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

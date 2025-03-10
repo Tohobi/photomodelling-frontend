@@ -10,6 +10,6 @@ import { GenericButtonComponent} from '../generic-button/generic-button.componen
 export class NavbarComponent {
 
   showButtonClicked() {
-    console.log('clicked');
+    console.log('Benutzer clicked');
   }
 }

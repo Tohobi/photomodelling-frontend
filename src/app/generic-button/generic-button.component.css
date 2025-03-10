@@ -1,8 +1,9 @@
 button {
-  background-color: slategrey;
-  color: white;
-  border: 2px solid black;
+  background-color: mediumspringgreen;
+  color: black;
+  border: 2px solid grey;
   border-radius: 4px;
+  font-size: large;
 }
 
 button:hover {

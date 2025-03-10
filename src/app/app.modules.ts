@@ -7,6 +7,7 @@ import { ProjectService } from '../../.bac/service/project.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [

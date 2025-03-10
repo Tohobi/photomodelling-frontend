@@ -8,12 +8,14 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { HeaderComponent } from './header/header.component';
+import {GenericButtonComponent} from './generic-button/generic-button.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
-
+    NavbarComponent,
+    HeaderComponent,
+    GenericButtonComponent,
   ],
   imports: [
     //CommonModule,

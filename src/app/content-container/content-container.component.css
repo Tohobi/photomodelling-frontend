@@ -1,1 +1,12 @@
+* {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+}
+
+
+content container als flex oder grid
+content units da zusammengebundelt rein irgendwie
+generic button + textfeld
+minheight

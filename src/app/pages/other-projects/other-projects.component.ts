@@ -1,5 +1,5 @@
 import {Component, signal} from '@angular/core';
-import { GenericButtonComponent} from '../../generic-button/generic-button.component';
+import { GenericButtonComponent} from '../../components/generic-button/generic-button.component';
 import {Project} from '../../models/projects.model';
 
 @Component({

@@ -1,9 +1,17 @@
 import { Routes } from '@angular/router';
-import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 import { AppComponent } from './app.component';
 import { HomeComponent } from '../../.bac/home/home.component';
+import {MyProjectsComponent} from './pages/my-projects/my-projects.component';
+import {OtherProjectsComponent} from './pages/other-projects/other-projects.component';
 
-export const routes: Routes = [
-  { path: 'home-component', component: HomeComponent },
-  { path: 'navbar-component', component: NavbarComponent }
+export const routes: Routes = [{
+  path: '',
+  pathMatch: 'full',
+  component: MyProjectsComponent
+},
+{
+  path: 'other-projects',
+  component: OtherProjectsComponent
+}
 ];

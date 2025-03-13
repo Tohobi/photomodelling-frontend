@@ -1,8 +1,8 @@
 import { Component, signal } from '@angular/core';
-import { GenericButtonComponent} from '../../generic-button/generic-button.component';
+import { GenericButtonComponent} from '../../components/generic-button/generic-button.component';
 import {Project} from '../../models/projects.model';
 
-import {ContentContainerComponent} from '../../content-container/content-container.component';
+import {ContentContainerComponent} from '../../components/content-container/content-container.component';
 
 @Component({
   selector: 'my-projects',

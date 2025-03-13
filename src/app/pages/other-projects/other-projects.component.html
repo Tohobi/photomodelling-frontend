@@ -1,9 +1,8 @@
-<div class="container-fluid px-0">
+<div class="container w-50">
   @for (project of myProjects(); track project.id) {
     <div class="row border p-3 mb-2">
-      <div class="col-8 fs-3 d-flex align-items-center">{{ project.title }}</div>
-      <div class="col-2"><generic-button label="Projekt bearbeiten"></generic-button></div>
-      <div class="col-2"><generic-button label="Projekt löschen"></generic-button></div>
+      <div class="col-10 fs-3 d-flex align-items-center">{{ project.title }}</div>
+      <div class="col-2 "><generic-button label='Projekt bewerten'></generic-button></div>
     </div>
 
     <!--div class="row border p-3 mb-2">

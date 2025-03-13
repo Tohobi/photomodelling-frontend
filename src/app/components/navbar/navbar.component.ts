@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { GenericButtonComponent} from '../generic-button/generic-button.component';
-import {RouterOutlet} from '@angular/router';
+import {RouterLink, RouterOutlet} from '@angular/router';
 
 @Component({
   selector: 'navbar',
-  imports: [GenericButtonComponent,
-    RouterOutlet],
+  imports: [
+    GenericButtonComponent,
+    RouterOutlet,
+    RouterLink],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })

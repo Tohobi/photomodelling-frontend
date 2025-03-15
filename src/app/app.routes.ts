@@ -6,7 +6,7 @@ import {MyProjectsComponent} from './pages/my-projects/my-projects.component';
 import {OtherProjectsComponent} from './pages/other-projects/other-projects.component';
 
 export const routes: Routes = [{
-  path: '',
+  path: 'my-projects',
   pathMatch: 'full',
   component: MyProjectsComponent
 },

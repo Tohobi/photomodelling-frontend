@@ -1,5 +1,8 @@
 export interface Project {
   id: number;
-  title: string;
-  owner: string;
+  name: string;
+  description: string;
+  user:
+    {"id": number,"username": string,"password":string,"role": string};
+  ratings: [];
 }

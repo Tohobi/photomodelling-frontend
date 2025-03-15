@@ -13,21 +13,34 @@ import {ContentContainerComponent} from '../../components/content-container/cont
   styleUrl: './my-projects.component.css'
 })
 export class MyProjectsComponent {
+  async ngOnInit() {
+    const res = await fetch(
+      'http://localhost:8080/project/byUser/1', {
+        mode: 'cors',
+        credentials: 'include'
+      }
+    );
+    const data = await res.json();
+    this.myProjects.set(data);
+    console.log(data);
+  }
+
   myProjects = signal<Project[]>([
-    {
-      id: 1,
-      title: 'Bennos Project',
-      owner: 'Benno'
-    },
-    {
-      id: 2,
-      title: 'Tobis Project',
-      owner: 'Tobi'
-    },
-    {
-      id: 3,
-      title: 'Test Projekt',
-      owner: 'User'
-    }
+    // {
+    //   id: 1,
+    //   title: 'Bennos Project',
+    //   owner: 'Benno'
+    // },
+    // {
+    //   id: 2,
+    //   title: 'Tobis Project',
+    //   owner: 'Tobi'
+    // },
+    // {
+    //   id: 3,
+    //   title: 'Test Projekt',
+    //   owner: 'User'
+    // }
   ]);
 }
+

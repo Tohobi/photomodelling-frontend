@@ -52,8 +52,22 @@
         </li>
       </ul>
       <!-- Rechtsbündiger Button -->
-      <generic-button label="Benutzer" (btnClicked)="showButtonClicked()" />
-      <generic-button label="Dialog" (btnClicked)="openDialog()" />
+      <!--<generic-button label="Benutzer" (btnClicked)="showButtonClicked()" />
+      <generic-button label="Dialog" (btnClicked)="openDialog()" />-->
+      <!-- Switch für Rating-Strategie -->
+      <div class="form-check form-switch d-flex align-items-center">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          role="switch"
+          id="ratingStrategySwitch"
+          [checked]="strategy === 'weighted'"
+          (change)="onStrategyToggle($event)"
+        />
+        <label class="form-check-label ms-2" for="ratingStrategySwitch">
+          Strategie: {{ strategy }}
+        </label>
+      </div>
 
     </div>
   </div>

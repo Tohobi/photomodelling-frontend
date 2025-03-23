@@ -1,18 +1,57 @@
 <div class="container w-50">
+
   @for (project of myProjects(); track project.id) {
-    <div class="row border p-3 mb-2">
-      <div class="col-10 fs-3 d-flex align-items-center">{{ project.name }}</div>
-      <div class="col-2 "><generic-button label='Projekt bewerten'></generic-button></div>
+  <div class="row border p-3 mb-2 align-items-center">
+
+  <!-- Projektname links -->
+  <div class="col-9 fs-3 d-flex align-items-center">
+  {{ project.name }}
+  </div>
+
+  <!-- Score + Button nebeneinander, rechtsbündig -->
+  <div class="col-3">
+    <div class="d-flex align-items-center justify-content-end w-100">
+      <span *ngIf="averageScores[project.id] !== undefined" class="fw-bold me-3">
+  {{ averageScores[project.id] }} / 5
+      </span>
+      <generic-button
+        label="Projekt bewerten"
+        (click)="openRatingDialog(project.id)">
+      </generic-button>
     </div>
+  </div>
 
-    <!--div class="row border p-3 mb-2">
-      <div class="col-8 fs-3 d-flex align-items-center">{{ project.title }}</div>
-
-      < Buttons nebeneinander, aber auf kleinen Screens untereinander >
-      <div class="col-4 col-md-2 d-flex flex-column flex-md-row gap-2">
-        <generic-button label="Projekt bearbeiten"></generic-button>
-        <generic-button label="Projekt löschen"></generic-button>
-      </div>
-    </div-->
+</div>
   }
+
+</div>
+
+<!-- Bewertungs-Modal -->
+<div class="modal fade" id="rateProjectModal" tabindex="-1" aria-labelledby="rateModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title" id="rateModalLabel">Projekt bewerten</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Schließen"></button>
+      </div>
+
+      <div class="modal-body">
+        <label class="form-label">Bewertung (1–5 Sterne)</label>
+        <select class="form-select mb-3" [(ngModel)]="ratingValue">
+          <option [ngValue]="null" disabled>Bitte auswählen</option>
+          <option *ngFor="let star of [1,2,3,4,5]" [ngValue]="star">{{ star }} ⭐</option>
+        </select>
+
+        <label class="form-label">Kommentar (optional)</label>
+        <textarea class="form-control" rows="3" [(ngModel)]="ratingComment"></textarea>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Abbrechen</button>
+        <button class="btn btn-primary" (click)="submitRating()">Absenden</button>
+      </div>
+
+    </div>
+  </div>
 </div>

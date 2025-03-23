@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from '../../.bac/home/home.component';
 import {MyProjectsComponent} from './pages/my-projects/my-projects.component';
 import {OtherProjectsComponent} from './pages/other-projects/other-projects.component';
+import {WelcomeComponent} from './pages/welcome/welcome.component';
 
 export const routes: Routes = [{
   path: 'my-projects',
@@ -12,6 +13,12 @@ export const routes: Routes = [{
 },
 {
   path: 'other-projects',
+  pathMatch: 'full',
   component: OtherProjectsComponent
+},
+{
+  path: '',
+  pathMatch: 'full',
+  component: WelcomeComponent
 }
 ];

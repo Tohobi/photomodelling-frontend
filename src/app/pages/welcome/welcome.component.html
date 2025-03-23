@@ -1,9 +1,33 @@
+<!--
 <div class="container text-center">
   <h1 class="mb-4">Herzlich Willkommen auf der Projektseite "Photomodelling"</h1>
   <div class="d-flex justify-content-center gap-3">
     <generic-button label="Meine Projekte" routerLink="/my-projects"></generic-button>
     <generic-button label="Andere Projekte" routerLink="/other-projects"></generic-button>
   </div>
+</div>
+-->
 
-
+<div class="container text-center">
+  <h1 class="mb-4">Herzlich Willkommen auf der Projektseite "Photomodelling"</h1>
+  <form (ngSubmit)="onLogin()" #loginForm="ngForm" class="d-flex flex-column align-items-center gap-3" style="max-width: 300px; margin: auto;">
+    <input
+      type="text"
+      name="username"
+      [(ngModel)]="username"
+      placeholder="Benutzername"
+      required
+      class="form-control"
+    />
+    <input
+      type="password"
+      name="password"
+      [(ngModel)]="password"
+      placeholder="Passwort"
+      required
+      class="form-control"
+    />
+    <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Login</button>
+    <div *ngIf="errorMessage" class="text-danger mt-2">{{ errorMessage }}</div>
+  </form>
 </div>

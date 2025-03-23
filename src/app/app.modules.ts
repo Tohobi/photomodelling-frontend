@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { ProjectComponent } from '../../.bac/project/project.component';
 import { CommonModule } from '@angular/common';
 import { ProjectService } from '../../.bac/service/project.service';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,6 +18,8 @@ import { ContentContainerComponent} from './components/content-container/content
 import {MyProjectsComponent} from "./pages/my-projects/my-projects.component";
 import {OtherProjectsComponent} from './pages/other-projects/other-projects.component';
 import {DialogComponent} from './components/dialog/dialog.component';
+import {WelcomeComponent} from './pages/welcome/welcome.component';
+
 
 export const routes: Routes = [{
   path: '',
@@ -25,7 +27,7 @@ export const routes: Routes = [{
   component: MyProjectsComponent
 },
 {
-  path: 'other-projects'
+  path: 'other-projects',
   component: OtherProjectsComponent
 }
 
@@ -40,7 +42,8 @@ export const routes: Routes = [{
         ContentContainerComponent,
         MyProjectsComponent,
         OtherProjectsComponent,
-        DialogComponent
+        DialogComponent,
+        WelcomeComponent
     ],
   imports: [
     //CommonModule,
@@ -48,7 +51,9 @@ export const routes: Routes = [{
     RouterModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     // {

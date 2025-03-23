@@ -12,7 +12,7 @@
       <!-- Buttons nebeneinander, aber auf kleinen Screens untereinander -->
       <div class="col-3 col-md-2 d-flex flex-column flex-md-row gap-2">
         <generic-button label="Projekt bearbeiten"></generic-button>
-        <generic-button label="Projekt löschen"></generic-button>
+        <generic-button label="Projekt löschen" (click)="confirmDelete(project.id, project.name)"></generic-button>
       </div>
     </div>
   }

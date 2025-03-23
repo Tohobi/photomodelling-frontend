@@ -43,7 +43,6 @@ export const routes: Routes = [{
         MyProjectsComponent,
         OtherProjectsComponent,
         DialogComponent,
-        WelcomeComponent
     ],
   imports: [
     //CommonModule,
@@ -53,7 +52,8 @@ export const routes: Routes = [{
     MatDialogModule,
     MatButtonModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    WelcomeComponent
   ],
   providers: [
     // {

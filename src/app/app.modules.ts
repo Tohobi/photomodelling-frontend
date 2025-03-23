@@ -19,6 +19,7 @@ import {MyProjectsComponent} from "./pages/my-projects/my-projects.component";
 import {OtherProjectsComponent} from './pages/other-projects/other-projects.component';
 import {DialogComponent} from './components/dialog/dialog.component';
 import {WelcomeComponent} from './pages/welcome/welcome.component';
+import {EditProjectComponent} from './pages/edit-project/edit-project.component';
 
 
 export const routes: Routes = [{
@@ -40,9 +41,8 @@ export const routes: Routes = [{
         GenericButtonComponent,
         BottomBarComponent,
         ContentContainerComponent,
-        MyProjectsComponent,
         OtherProjectsComponent,
-        DialogComponent,
+        DialogComponent
     ],
   imports: [
     //CommonModule,
@@ -53,7 +53,9 @@ export const routes: Routes = [{
     MatButtonModule,
     HttpClientModule,
     FormsModule,
-    WelcomeComponent
+    WelcomeComponent,
+    MyProjectsComponent,
+    EditProjectComponent
   ],
   providers: [
     // {

@@ -5,6 +5,7 @@ import { HomeComponent } from '../../.bac/home/home.component';
 import {MyProjectsComponent} from './pages/my-projects/my-projects.component';
 import {OtherProjectsComponent} from './pages/other-projects/other-projects.component';
 import {WelcomeComponent} from './pages/welcome/welcome.component';
+import {EditProjectComponent} from './pages/edit-project/edit-project.component';
 
 export const routes: Routes = [{
   path: 'my-projects',
@@ -20,5 +21,10 @@ export const routes: Routes = [{
   path: '',
   pathMatch: 'full',
   component: WelcomeComponent
+},
+{
+  path: 'edit-project/:id',
+  pathMatch: 'full',
+  component: EditProjectComponent
 }
 ];

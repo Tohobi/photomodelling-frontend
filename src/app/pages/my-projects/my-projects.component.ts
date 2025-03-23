@@ -5,6 +5,7 @@ import {HttpClient, HttpClientModule, HttpHeaders} from '@angular/common/http';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import * as bootstrap from 'bootstrap';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -17,7 +18,7 @@ import * as bootstrap from 'bootstrap';
 export class MyProjectsComponent implements OnInit {
   myProjects = signal<Project[]>([]);
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   showCreateDialog = false;
   newProjectName = '';
@@ -144,6 +145,10 @@ export class MyProjectsComponent implements OnInit {
     } catch (err) {
       console.error('Technischer Fehler beim Erstellen:', err);
     }
+  }
+
+  editProject(projectId: number) {
+    this.router.navigate(['/edit-project', projectId]);
   }
 
 }

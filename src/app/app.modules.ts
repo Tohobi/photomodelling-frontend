@@ -17,7 +17,7 @@ import { BottomBarComponent } from './components/bottom-bar/bottom-bar.component
 import { ContentContainerComponent} from './components/content-container/content-container.component';
 import {MyProjectsComponent} from "./pages/my-projects/my-projects.component";
 import {OtherProjectsComponent} from './pages/other-projects/other-projects.component';
-import {DialogComponent} from './dialog/dialog.component';
+import {DialogComponent} from './components/dialog/dialog.component';
 
 export const routes: Routes = [{
   path: '',

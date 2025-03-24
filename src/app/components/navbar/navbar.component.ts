@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { GenericButtonComponent } from '../generic-button/generic-button.component';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet, Router } from '@angular/router';
 import { DialogComponent } from '../dialog/dialog.component';
 import { HttpClient } from '@angular/common/http';
 import { StrategyService } from '../../services/strategy.service'; // ggf. Pfad anpassen
@@ -22,7 +22,7 @@ export class NavbarComponent {
 
   @Output() strategyChanged = new EventEmitter<'average' | 'weighted'>();
 
-  constructor(private http: HttpClient, private strategyService: StrategyService) {}
+  constructor(private http: HttpClient, private strategyService: StrategyService, private router: Router) {}
 
   showButtonClicked() {
     console.log('Benutzer clicked');
@@ -42,10 +42,16 @@ export class NavbarComponent {
       .then(res => {
         if (!res.ok) throw new Error('Fehler beim Wechseln der Strategie');
         console.log('Strategie geändert zu:', this.strategy);
-        this.strategyService.updateStrategy(this.strategy); // 💥
+        this.strategyService.updateStrategy(this.strategy);
       })
       .catch(err => {
         console.error('Strategiewechsel fehlgeschlagen:', err);
       });
   }
+
+  logout() {
+    localStorage.removeItem('token');
+    this.router.navigate(['/']); // zurück zur WelcomePage
+  }
+
 }

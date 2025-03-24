@@ -7,15 +7,28 @@
 
   <!-- Projektliste -->
   @for (project of myProjects(); track project.id) {
-  <div class="row border p-3 mb-2">
-    <div class="col-9 fs-3 d-flex align-items-center">{{ project.name }}</div>
+  <div class="row border p-3 mb-2 align-items-center">
 
-      <div class="col-3 col-md-2 d-flex flex-column flex-md-row gap-2">
-        <generic-button label="Projekt bearbeiten" (click)="editProject(project.id)"></generic-button>
-        <generic-button label="Projekt löschen" (click)="confirmDelete(project.id, project.name)"></generic-button>
-      </div>
-    </div>
+    <!-- Projektname -->
+    <div class="col-9 fs-3 d-flex align-items-center">
+  {{ project.name }}
+  </div>
+
+  <!-- Aktionen: Bearbeiten + Löschen -->
+  <div class="col-3 d-flex flex-column flex-md-row justify-content-end align-items-center gap-2">
+    <generic-button
+      label="Projekt bearbeiten"
+      (click)="editProject(project.id)">
+    </generic-button>
+    <generic-button
+      label="Projekt löschen"
+      (click)="confirmDelete(project.id, project.name)">
+    </generic-button>
+  </div>
+
+</div>
   }
+
 </div>
 
 <!-- Projekt erstellen Modal -->
@@ -31,12 +44,21 @@
       <div class="modal-body">
         <div class="mb-3">
           <label for="projectName" class="form-label">Projektname</label>
-          <input type="text" id="projectName" class="form-control" [(ngModel)]="newProjectName" />
+          <input
+            type="text"
+            id="projectName"
+            class="form-control"
+            [(ngModel)]="newProjectName" />
         </div>
 
         <div class="mb-3">
           <label for="projectDesc" class="form-label">Beschreibung</label>
-          <textarea id="projectDesc" class="form-control" rows="3" [(ngModel)]="newProjectDescription"></textarea>
+          <textarea
+            id="projectDesc"
+            class="form-control"
+            rows="3"
+            [(ngModel)]="newProjectDescription">
+          </textarea>
         </div>
       </div>
 
@@ -44,7 +66,7 @@
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Abbrechen</button>
         <button type="button" class="btn btn-primary" (click)="createProject()">Erstellen</button>
       </div>
+
     </div>
   </div>
 </div>
-

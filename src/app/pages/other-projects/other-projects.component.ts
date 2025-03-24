@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClient, HttpHeaders, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import * as bootstrap from 'bootstrap';
-import { StrategyService } from '../../services/strategy.service'; // ggf. Pfad anpassen
+import { StrategyService } from '../../services/strategy.service'; 
 
 @Component({
   selector: 'app-other-projects',

@@ -1,6 +1,6 @@
 import {beforeEach} from 'mocha';
 
-describe('Benutzer kann sich einloggen und eigene Projekte bearbeiten und löschen', () => {
+describe('End to End tests for standard user actions', () => {
   beforeEach(() => {
     cy.visit('http://localhost:4200');
 
@@ -26,7 +26,21 @@ describe('Benutzer kann sich einloggen und eigene Projekte bearbeiten und lösch
     cy.get(':nth-child(3) > .col-3 > [label="Projekt bearbeiten"] > .btn').click();
     cy.url().should('include', '/edit-project/');
     cy.get('#photoUpload').click();
-    //cy.get('#photoUpload').attachFile('kueche.jpg');
+  });
+
+  it('user can delete a project', () => {
+    cy.get(':nth-child(3) > .col-3 > [label="Projekt löschen"] > .btn').click();
+  });
+
+  it('user can give a rating', () => {
+    cy.get('.ms-3 > .btn').click();
+    cy.get('navbar').should('contain.text', 'Andere Projekte');
+    cy.get('.navbar-nav > :nth-child(2) > .nav-link').click();
+    cy.get(':nth-child(3) > .col-3 > .d-flex > generic-button > .btn').click();
+    cy.url().should('include', '/other-projects');
+    cy.get('.form-select').select(2);
+    cy.get('.form-control').type('Das Projekt ist toll');
+    cy.get('.modal-footer > .btn-primary').click();
   });
 });
 
